@@ -2,13 +2,14 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import style from './Home.module.css'
 
-function Home(props) {
+function Home() {
+
+  const [items, setItems] = useState([])
 
   useEffect(() => {
     fetchData()
+    //console.log(items)
   }, [])
-
-  const [ndata, setData] = useState([])
 
   const fetchData = async () => {
     try {
@@ -22,17 +23,18 @@ function Home(props) {
       const data = await response.json();
 
       //console.log(data)
-      setData([...data])
+      setItems([...data])
     }
     catch (error) {
       console.log(error.message)
     }
   }
 
-  console.log(ndata)
+  console.log(items)
+
 
   return (
-    <div className={style.home}><h1>Hello {"john"}, Welcome to my home page</h1></div>
+    <div className={style.home}><h1>Hello {JSON.stringify(items)}, Welcome to my home page</h1></div>
   )
 }
 

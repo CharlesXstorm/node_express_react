@@ -13,7 +13,7 @@ function App() {
   // const fetchData = async () => {
   //   try {
   //     const response = await fetch("/")
-  //     console.log(response)
+  //     //console.log(response)
   //     if (!response.ok) {
   //       throw new Error("Unable to fetch data")
   //     }
